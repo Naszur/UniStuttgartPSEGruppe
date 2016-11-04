@@ -1,0 +1,39 @@
+package de.unistuttgart.iaas.pse.ex01.p4;
+
+public class ElectricRates {
+
+	// Methode für den ersten Tarif
+	public static double tarif1(int kWh) {
+		return 9.69 + 0.42 * kWh;
+
+	}
+
+	// Methode für den zweiten Tarif
+	public static double tarif2(int kWh) {
+		return 17.04 + 0.30 * kWh;
+
+	}
+
+	// Methode für den dritten Tarif
+	public static double tarif3(int kWh) {
+		if (kWh <= 15.0) {
+			return 6.25;
+		} else {
+			return 6.25 + (kWh - 15) * 0.57;
+		}
+
+	}
+
+	public static void main(String[] args) {
+		//Der monatliche Tarif wird schrittweise berechnet.
+		for (int i = 0; i < 10; i++) {
+			System.out.println(
+					"Der monatliche Tarif 1 für " + (i + 1) * 10 + "kWh ist: " + tarif1((i + 1) * 10) + "€");
+			System.out.println(
+					"Der monatliche Tarif 2 für " + (i + 1) * 10 + "kWh ist: " + tarif2((i + 1) * 10) + "€");
+			System.out.println(
+					"Der monatliche Tarif 3 für " + (i + 1) * 10 + "kWh ist: " + tarif3((i + 1) * 10) + "€ \n");
+		}
+	}
+
+}
