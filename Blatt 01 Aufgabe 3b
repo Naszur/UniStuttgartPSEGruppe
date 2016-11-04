@@ -1,0 +1,35 @@
+package de.unistuttgart.iaas.pse.ex01.p3;
+
+// Hashmap wird importiert
+import java.util.HashMap;
+
+
+public class EmailManagement {
+	// Eine neue HashMap, dessen Key sowie Value Strings sind, wird erstellt.
+	private HashMap<String, String> map = new HashMap<String, String>();
+
+	public void add(String name, String email) {
+		// Der Benutzername sowie die E-Mail werden der Map hinzugefügt.
+		map.put(name, email);
+	}
+
+	public void printAll() {
+		// Die Keys(Benutzernamen) sowie die zugehörigen Values(E-Mails) werden
+		// schrittweise aus der Map geholt und ausgegeben.
+		for (String key : map.keySet()) {
+			System.out.println("Benutzername: " + key + " " + ",E-Mail: " + map.get(key));
+		}
+
+	}
+
+	public static void main(String[] args) {
+		// to test both methods
+		EmailManagement management = new EmailManagement();
+		management.add("Albert Schmidt", "albert.schmidt@gmx.de");
+		management.add("Max Heselbach", "max.heselbach@gmx.de");
+		management.add("Berta Weber", "berta.weber@gmx.de");
+
+		management.printAll();
+	}
+
+}
